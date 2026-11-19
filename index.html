@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NEXTWAVEDIGITAL | Websites, QR Menus & Digital Help</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7f3;--surface:#fff;--ink:#10302f;--muted:#4d6665;--line:#d5deda;--brand:#0a0a0a;--on-brand:#fff;--accent:#e9b949;--on-accent:#10302f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1d1c;--surface:#12292828;--ink:#eaf2ef;--muted:#9db8b4;--line:#244240;--brand:#f2b134;--on-brand:#10302f;--accent:#e9b949;--on-accent:#10302f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1d1c;--surface:#122928;--ink:#eaf2ef;--muted:#9db8b4;--line:#244240;--brand:#f2b134;--on-brand:#10302f;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--surface:#122928}}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Nunito Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.3rem,8vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,5vw,2.5rem);font-weight:800;margin-bottom:.6rem}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:.5rem 0}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn{display:inline-block;border:0;border-radius:999px;padding:.9rem 1.6rem;font:700 1rem "Nunito Sans",sans-serif;cursor:pointer;text-decoration:none;background:var(--accent);color:var(--on-accent)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+.hero{background:#0a0a0a;color:#fff;border-radius:0 0 2rem 2rem;padding:1rem 0 4rem}
+.hero{position:relative;overflow:hidden}
+#bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero nav a{color:#fff}
+.hero p.lead{font-size:1.2rem;max-width:34rem;margin:1.2rem 0 1.8rem;opacity:.92}
+.hero .actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .btn.alt{color:#fff;border-color:rgba(255,255,255,.45)}
+.hero h1{margin-top:3rem;max-width:14ch}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:1.5rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem}
+.card p{color:var(--muted);font-size:.97rem}
+.quote{background:var(--surface);border-left:6px solid var(--accent);padding:1.4rem 1.5rem;border-radius:0 14px 14px 0;font:600 clamp(1.3rem,4vw,1.8rem)/1.3 "Bricolage Grotesque",sans-serif}
+.quote small{display:block;font:400 .95rem "Nunito Sans",sans-serif;color:var(--muted);margin-top:.6rem}
+.speech p{max-width:62ch}
+.stars{color:var(--accent);letter-spacing:2px}
+.who{font-weight:700;margin-top:.6rem;font-size:.95rem}
+form{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.4rem;margin-top:1.5rem}
+label.l{display:block;font-weight:700;margin:1.1rem 0 .35rem}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;padding:.8rem 1rem;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:96px;resize:vertical}
+.opts{display:grid;gap:.5rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.opt{display:flex;gap:.6rem;align-items:center;padding:.7rem .9rem;border:1.5px solid var(--line);border-radius:10px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--accent);background:rgba(233,185,73,.16)}
+.opt input{width:1.15rem;height:1.15rem;accent-color:var(--brand)}
+.err{color:#c0392b;font-weight:700;min-height:1.4rem;margin:.8rem 0 0}
+.note{color:var(--muted);font-size:.9rem}
+#ownBtn{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:50;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+#ownBox{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:none;overflow:auto;padding:1rem}
+#ownBox .panel{background:var(--surface);color:var(--ink);max-width:640px;margin:1rem auto;border-radius:16px;padding:1.2rem}
+#ownBox textarea{min-height:150px;font-size:.92rem}
+footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#top"><img src="data:image/webp;base64,UklGRoohAABXRUJQVlA4IH4hAADwdQCdASrwAPAAPmEskkakIqGhJ7R76IAMCWJu/Hx7KxlYZZwTz8/WecNav9t/dfNd2nde+Z1zr5vv9R6kf057AH7F9Kv9r/UN+0H7Oe9l6Mf71/r/YA/q/+f///YQ+gB+63pvfuf8Kv9h/537me1R///YA///tt9IP2E/tfa1/iPy5/s3qT+J/Qf3z+2/tr/e/b0/t/G11L+vvqV/KPud+c/tX7s+v/+w/KTzr+O3+F6gX4v/Rf8T+Y39/4jPdf9V/xfUL9y/pf+n/vn5K/Gz815ofY//ke4D/Q/67/q/uK9rHwPvOvYB/m39w/6f+E/JX6av6T/0/5T/T/uv7Zf0D/Jf+f/O/Ab/MP69/x/777ansF/bP//+6p+xv/tOyuZPPMCATPBzw33+HHHWI0QsMs3O3H7f7N4PMQFHwdthvDfrT4ZmzZ2tlcI3FY94UGE50RmG+kd1c7gdw3rhKVMzfIJJG80HluufBtKQHVK1gTz7JLMuPP122JhrMt4YktC+IV7wyUkPOhYHsRKiSV5cZj4P7URZbWqOarinehHPiOSS6lWdMfoA5uZ3n5gsYJXMsKwsaHXtBQaBUVDJFxfK6Tom1DXAAvAVp/Z3gMhylnSQyghKl2SvfIZtm0UCQJ43YSB2GCZPrTUCwMEcO24AcVe9CHaqHfl3ca7gLNkq0CKTExwI/M4urJZQKnwnxG8MxR7NJyz/QRc88xZixdI+hhebhHtZJyzakBTjGnnpV10Ub3Ug2x/SysHro84mM9Cf9v8H8i2C8fP8yB4TMK1dznmb2xkJZevxBoM4Ge2oOy7AwTxZ+xCzdIYF+bFGSQdNqrPQXlJw2YDPuWg6q9wySUAxsCHbl47X8bgEDvyImrwXuytRebPq+Y9htfEL4ulVYtXVL9UhvPFvgzv6+EvIbYtftVlau3gRSGhsco82+LeGlZ0z6D8Bm9q/EMnmrpu13wuYo+gFXkIjZgYohFojDpcXC3OZRckUMFrFIwBdjC6+wC3U7cNQ10bA/oJo5lYaL94bZ415ZAofyNqcI8T0PYZ9KV7Yis1lH/LdEYe38HeZAOKm+VrdsrcJtD4G61Oz4MChRQ8mgOmTMa4pgoXSLTnGKO2cN5+ZREV68v2aHByTiNMo0SwjMqMlhQGxuAvQEMu5kUbyh+I97OlLlqLA9+GfExk8mkN+N+/Nk9Kt15VuA/pN5zyiAwQlj4D1Qi5lKhW25LJRE/R5kMuwUB8AxI6hetnMV/n/+mFVegmo+5X8MR01GGtAAP7fBoKFZFlPaKu743QM1pYMsEXuwBVmwD9n3MLViMTNpFD1xwsfk1UshmIPW5nYn1TOc1TP4f2s9ejnuLQGcFwM7o/3xWeACd/6KhkpU8hUS7N31sm5010ZgDgdPULo63CzAt00gjm4netHV91CE22dtL5AQHxucOa4LvxVMnpYOO6rglVRfCEFj3tRXxdQdk+c+qtl9wFgCSbbf6s4mCdkNGeVW9oxIruvRF1ZwVh7gw7PZqAJ5ZFkistYgeem4kHwwp7reLPr1c7jSbz3o3MxmvftQil5lyngbYOlwqMuv5yVjLWMi+3AZgvU3o2KW8VoEj8MeOTPI4qSjeKx20Rov4qb1dRQn9tqQZWH4uqkYInaNM2nIqQsttinIemw1PMG3cC5eQIqdRX02KjRQs7CNb99J/fTfOQ9pyD/uWmnz24NoYyc7jHcxrk6TX7K4G/et+nwAsRCcrOk1/wIcfJbsf61nVNKmk3FblfkWic3fqdYJYtsf8UeRUgzFOMTXWiiJOTat/sVB9ET4pZVz+imVqUtjsT6dWQKy3OlzHIyfien2aPpkwtYUq7WHQ5ZPYqXNc+gLxIwsV0eVWkC+QkQ9BL7Q7W4lE6XqEQqrfbWB5qptEhMQmXsshJfLmQ6pAtJM/NypAbMtxAELJmZ+KcowBXFAjVb+FjOy7DbXc5kq17hMeCCXR1lz+V6waBQtU8Db+AH+k9xWvmZMXp+zh5GAM9PYxAAb93/rmrC7WaDQzuEVJrlAm3YUZ7opO7d0ElaCKv75xIOTXPfAeJn4l/SyXp080Mob5E/3nm8R9cRWJanyiwrxBk6rLMbyWc9ik4tMLeZ9euICRkpYyCyM+gae0k3n0+iYYLnej8fPCexgUQYBSGmZHGz8gph0mnA6OW4K7a/JZ2+BJLkD7iLx4qMOWbxqaRc78LSfMZHvCqnmUxlqkgbJD7I/S/gxUMoTbfL+ewBfe4AywdlmxgxSMK2CQndn9txalimfrmaxGpE362Zu3kmwM2EOKDmWPV05HwW3a/qEpoupG4btZWpJ9CecTAiD87tqXRejnGNOwLhQwBGX87HsJfg0hbXiAlR5ZTdy/++YyDCAcJR3Vl9AjaONYFUi2Oauyjxr0l79Pth4Eu9u3aPk4xQgC5I8cCnE1pkGonmgBP5PTYWc5J+mkXpdLgwiqOW2jdFlfmaeXL/sRxys25Gf+wbhu9lQLIAwmJny+qktFD0hl9euc+N4eEF+Y5bVqWgMhJFiQWmFZ9Pei7P8v5WvGek5ZkUADNP/kFoLxzBvLj8Q3TH3j01zLqHkwjjxmIcafaYdsg3+l3G+mF0gLaN/VQnfcnCxw73ZMnNviWUoRAH2xYImLr0st14sEC2iGMO+RwECk5kovljFCacqZCX/qDSN/1+3MbyhtRcGn6TXWq/fBaiHUHvMGTRmYdFjIJqkzEeFWSJ6IZV8oPxnNtO+NW9FGthZXzD3UbQ1b/NefJM49+DQbhE/ysYKq/tO9riw57EjMuEXzaQwl6gmy5J8aL/IphEb/Vc0Y5gAa9Sm9AmY7gXpfmr9aM/31o8pBVLR3faRRrl4b6mbfjNHHI3lkuWLCBF7kN+7/eRG/G/strJ2tOcG5/Qfe9bOsHgWCS3VEDOl4YcbG8e7mdhHoW6rLbrm+eabkTHzAA+nx91rt/184xBejACgb7tcl5wNwNJloV+rN38YBS9jQdwe/cgKophrE1CZ5CdnLpkbC+z1OiweOcJxsQhB1Vr/53v0hoRfGNiiDId4sgBIFUbUYIjwVZjeSjPPqoQ0CpErtUjGCZoNmmGiNb1jpNMzHqq3oeB1yUgFWnaWn4/XB2uOvc+Mog9lIbcqOCcSVVbi89LhYQWBiJlLKygwrkZ8FSoR49ORpYYnEgjJr7EshEXKmPzkq4SbfXLa2r/wOBzDm8uZBBsu9SvHB6a2rRx3jE1WtUifIrJdh3YUeeDq5ZV8uukjJyAA2wAYITUDPBcEIqVT7vpHrrMzDjnS9Ui1Cef8QH3QBuD1VpwpbTUhFiZP72y8ZX26ep2914sff9eBzmgXhuoVPvdus6NiszdVRa6rltKZjmwX630Sx9KFdrsmf+MyJaCq47N+xWOs/eZ+swNrG8v8gb2NtHfFvenCaoj5L6d+oEN8C5RE+4MEEx8/YiJOa2HuN9m0VtiYA7qvYEuWrr9j4sR9DK+Bpog1J9JCaTpqsBOwPsjsyGDL2r6TuCEYFXQsc2cK5tvXtx4j3emk+08/AjSHND63dES+0m+j9L3vOQVvorvl/TbYB0R0RgX0804qZ3EndurlY3AkXUW2rF7ZlmDgGA2CVCxacv/4gWtP8f+EfBX5WF8KjZmUJYp0hZSv0wTRMqJuqmhJKjxpdxnW4RvGHpL38IiaHkzK8luPaWvfuVhP0L2DInpj8phayXNLQFNg7KDdINZj1NzkYdpF7SwdZYoPXHD7l5cyqCn7olwImPripqwMjsbuEly1KA0hZexPNL8e6VmSxnsZgLP5KJrmIYz5eZjwhfnv6XXpavILoSnXoGORxvsT3q9mltc9vJJxpVHh+d/xMxxsvl2M7OMfh7GAgJlTvlIQgPYTMiBNQxjwBkMg0MtI53w0U+jcCbDRvBY66lV2h64Ew3yNHv0GsUhbrsyEsNsALmOKAO+hYVjI9RTLrPSouozHZerLmuw2uEiIphcHD2mf8W08xtiQrDV3RX9AhmD6RJZDmOei/qfs88QgGOwkKU7OavTxJDhDGcHlzePFFY+pmTGaxtujdXNnskLm5MOaZy6MHrzeaLfLPZLYIh36HIxWARC0MmZGfLi/kbDRNEjq3nRnmwD1Gqs33+Sth6WLSeebdNKlEYqLqIcki77Pr9W3/xYhoNBfUVPjFdbL2cTYAoc7osV05X1AXXEU9Fk1xLC6U9O6+UWkStp38rpARGz7VmCsIzAqRm3QwjBBHdI1KFBKEyGs7aQ/lbw2Da2HETWDCceIw7sUCFHMe3U82qFb4X+Vk62Eyb9HIJhznrOH70Q5nHOB1ss6no7aNMsqyABbGva7u4QZuTcvS3UR/1GHR8hndsla35x7ktHzbyfKy+NWZ/N195wfuVvdnF+4WuonpS6O5yCiH7XjHRjtyAMRVwFTC8uyZNoIyhMDSCC3r6H732DEi1e7s5TDxbrgqOD/iI9aqnortYCfRM7JzMrxFSAnzgItQoxwz6BJOfjMuX2jXV6RPLWd/VrxNf3jOGYAlDw4whaKtTrdU3PhWjK1G4eKmoB9kwkfQqFzEhXNta3hqw8s3vItjQoNf34L+Dztpgc54Eqj0dgYm4W3w0ue4og9rkIOk9S4la7gMrb7+cKQyGpFBo9ReSBw6l1/UFePtR7ccGq7HXQhahhYvmemArAUmMzrZwFTpdejYWJv6ws2NXt7g/VJJipAQD5+mpIpY+7SGGBNDbNXWV0eKn/OEpyFABeTjZyANJ7XHV2RKJ9DxYxR0BE78iWoE78dHzxe5VhOst8EFgjoJELNmklO76wPetbd15PhgPaTmqFUFOxdO/SW73ICx5chTi+ss1KA5J2DaUwv76WdQJ9Kt0TIG93X7NFCsaFMsed1pQpKtUu8DvICDprmMC5MvyVfaLF4udGyEXeM9UJ9Oe9QhWA1sBrtnmLPPowxMinS90qrBANdR/OvTshplxHSKcMNsWx0z9BpwPSNpksxBtdLQ9zVCLtxe9N9fk9VF9IqKhruGwDQ4PznXJQ7AhyYqWeslfbAz7WInEIKdZnotqVHGkR9XGizDuVl5hNsv2UbX6NYJMBPeykEedfHIakUFsqdxn4xg59j9Vhn3eB2RHgQtr7quUsAdRG+97ym0ZMlwEk0UHH7yBWPR1rYvtrQuE5tqE6mcLf+o4Ahp+127ZM7FJB99AB/XY2rxPjIbGNH7t394iy/coIp9hBdgmcIvVEWhRDTQIMLJn8GD/zej7SDbKpbiixHMf5SS2lJMzYrCKZfwvmYyfnNrI3kDeq1MKGn+mej9R/LFMk6UFL1VBw7TM1ihgpFqhaKhO+10HDmy87mYPYGrhy+TaZW3GtP5fLHvuF1ZPcQvZN4f1vmIKrKZ0PQTNNeZXTqxgxxAe3eCEL/oc5kS1p6pw5EozVXehtA1Q8aLJM8uzDqZI5MItEw+v6SRe7bavN+xlT3cRennqg1odemruFii8dsBcrVvXUTIRgQFgyPM0rCrFa0qwHeJWUF0Pa8zyax8tYNGA+6OYl5fJoyGYk/0zasrYsy6OBPIo5DwYY1TTHLxzwB1d+/fEGpiTszWpf9iAMNPrZBOoasONYvkufF2cHHM3mRnlNqn4y5aqFHVsAGuAlxrIoYr+vkDquRSq9YMZ6tarJgrv8bngijFTRXjNir/xxDb/TUKR3rzHm2+lhqV08gh29enwC+ZbKkpWsJM/goSx3j64JwcY6tERbPaSxySMG3JRkL33RA22mZ4Kr0K/qcU4Aj/V1R9LLf54uGIrRw/fl+MnbfacIJZTf+LPE/kEWy4MoKlBuD58u7uXljfvHYisGtEOWuz/iTc5+rzpamrY9nWArKTNuT6S9oKWJ/Gy/+HgF70kV2sHAUjFg9FYDVUmmTiHv6D4Q4NYb6EloKDrX/dKX0h4/VAncaJ6VvmKf31ZLssn8c/66sm7IBYew91UO32DMa1TU2njEfCOjh5RcFw0quqE4UT5g/9gOUkN3LGHxNMgQlCR98z90wNowv/XrSf53qMEMPuD9j8mieYTWAOWPR3PqcRa0c010bdrvzTgWM1FKxkDtrfQvHeSmrLldPemDneOq0Nd/G2g/Qrk4ZmfDBeN5OhQvsnfXD3XofmblZQ+e4oAAW8PHlwvD1h88nw1npuW1JOO3BI5FHE+l9i7tD9v2S+27IW9PEp4kARSY+XP3SxZ+ICa/Nex+4qgAzOTTBEWvozPyqjPEKCXJNHOaK0LMXHC/1hZMbCn7FVHzSGD3kEB71CFsIltf8tiPmIdPJ+VPWlV8xBfUUgilJocZgKmtNMDpHqPOotoTlGHFZA1a0a7D9w/PV7F0EVUfGsEbF8Y9GHbgWSlf5Nm3NrnGnAA0SSmEHioYMRR9pZixNvVEIX+dCgksFtAL5wx0m+mldkMhm32neDz4/u2l/aRF/9GhFJgjVkQbCjJKGKyu+yjiu7rnlPWXHXQRagahpCwocEiSyYka26DJyVsM//3S0xzcgdrip6+3aN59Ja/uMwCTqoaXwHn65zcM34NddQ39utQ37rWBVcFTeqmX8WVDUxIOXlzn3sls7uK/atKeJaKSKCaLIE52RGMKCBMU2OVxHLQpA92VbkEn9Se6LnO/7/SwYdOsSxeuGGmpt5s2QS0BjHueLxcAr7kC+s2eu443DRasTeOxEKs34FmexE4SxFcFCuI/Rn0yYsIbb/H8CSOQyKDHMkvPSibSPGdNgWGYigkv6WVSrqh/f/M933D82NnQIaXnGPLeu7rS17FW790SiQsuy25HxDDF/UGfQzTGuRynALnRfx/DidsjYtJFr9gnU//jWGFbu1XDr4S89iT25x2QkzpGfPV0L2SeMQoo97gVfzfXa33chc5vn45sp1z6dLXPfrn0txO0aa/9fnVyLbiqqjHxOXzKwWruf6dSjw4YjHkbJuki7vRT7JqACSaHZhlo9M/T3XS67ExDI8DCzMNekLywT8Bz+FakiLuiNb0eszfp0fJjLSFrKEidVPN23gpjdgkqXEg1q87ta7UF3gbIVX+bYRRuin9LPmoCS5HEBdYeLNvoEK1CY6tK84E3SeZkoTRI3NaqAHgo5vhce8faDMHDtbaBLVVpntVtMTo8+jibJ+oA4g7o5nKBwOI8Z/LisVa7XqxNPhVhG0oOhE0o+WTrzKufRXzOlaECF/k/6zGebQqaYzpgsPi8/9+/bYRfol+tOSk8qIiy4L7c8Jo99NUTWXJWFntDpGneBASxxXuQOy5ti/DPjksxemZfgqtdOho2z6uc6pVDuhWrT+010yjb0Y3w0s8o/ufL35J7c2xHe126CB2TG/dNN9xMyGwmaoIPm1sG3QEL2GRf/ccgrVmocXzOHEWUZnfEWbbfqVswFYPuBJetoVW7jmflP1Kd0thLsRrCNKKjiPh3LzjGmtQIEOjAPCEAs1ewRT0O+XiQkZOW6ur9WDxhFtJbBhgv4PPZJE2ywQCFwOWsYnDTCgYupcV3sNZsJyo9fOYKpQdaPSf5OPm9ydZK2Zp7JVdaSv9+Y+rclh4J1b7u9zWNG37pd78gsv6vvSmQRVVp1eyJCD0F/m2YjBE3JGXk0ADTyyb+K7Pdz+TDFPconiB/k5IkJxLwfgovqFxYWFS+qx9bC6iNts2EE0FLKcwL3PDiJnWmURW8yGtCiNPChqm3/Fp+1jSfvK3ICKV4Qqomj8swre4sGWNYodLppNhSD9s+cUrGZlo2awPKhtKV6iCqOiFMxAacMO/uvwtcBIGNR7FHxq4OZofi2k+fKxjgOZIkg9Kv5fQq3YQu3z3g9AN2fl05tSaTVllZ+1gTmk6hHXLvldWLJIqYDImHdhbcweXagLekRsVoZfGoDUgfb+QvCjIWtDAdW4+48kE0T4sGz6Ty7vp8nFw6UrsUawX3YnZqpbzhcIiba/TgimnBbZErs1atdTr0toxH5WI/MapZtq5QX5hSe9nksD8lc7Ux1VOq1NPBCQAeuc95Xw8pVkCcJ/fIoV4kumlreiA4ql1BM/u2VRB8dCewYRkeUmVGnJ8E4jTYzBJgIvL3S3sDEDXMhb/QMV2/qtpJRfv+WE/CZzoo2gzX8MTi6O+cvWfrHl+EZooRgPwhrSM0+VqY2Orl9ncC7xMJic0VmTkDBLAbZ+lRU+jbMZj0DVq0b8X0DvBB1UghBmfc7k4Q9aKQ9buwP5NIEeldZiviT+V/mQXq2mXZsyfVZEDG5qjoqwhUOxWEXadx4l1YSpdKX6OWL0jH6LXqUyvrmYfBdCD4+3uwmegA2JQ5K04+j0XtJjeAvB+NMn2FyZrblCeF+fak+wdnjWqi5qtBQjHf1g8sufwPpxo8O+WUgR4ZpWp9b/NT/NyIWKhZdJfe51DOebmN26q+tzcT3mKpF02xaW1z0x7rpnXTuceFQXW7xkPIjBXr3sCuwv1h1Zh/hqgY26sUQbXSlNqjXbzx618K6Nl+zw8GClcmngph9I9/9UtaFNvUJbzGO50XKFFbH+pS9YW0cjwa+8oQ1uwY0XRTH1z6rN24+nZGRLc9nGtQzoVcekaQdBYioMv384p+/pa89T6AmRsfc1+Z8fAsAFGnJaID0eEaTO7GccfgP1NT9O26eRsEWSx54N+wWiryNpYWgTXzrT63AGAi6Q6PkoJSdz5BTjPwczDn/YcPrsdQ4UPKpmoOZ2Cl+WLP6VEhEmfyKV3anHIprLcqwY+rp75q0iIGgGSkB7SfLKJ6LmvCKlRyahv1Z250TLwkr+3A0fPfnSwOVkRhVnCV9cqSzwP8rVkXTe+xVP8cO1y15fTepP1SMsY/IK7DgNtmZjxtwComQwxqqXr/LMXTXJssTy2U3ZZHWX8CWr595NFiZPakBLV36TLX6zPloyxlc3Im4yJI6oqLbeKCF0GIFYT7yHO4BopbwLmhLR1vdqnTjCFgtN/cPsOL0ZhYvyEhuxMoYAMWMUA0B9vjK/K4vS4ohKjhgVptvbMvFqIeD4GIGsVcLjQVSU8XVK2LuTbDNnzGUt/+LZqsc99SSanfvafxWOGJQg39cxuYrr/nS6NFY27FUCODBIb4J/mixHqMUiKwDfMC72uLUyKnU4S/8Hg5cdPetulFSAr1iPVdcqS5u8c1baKRnh9G4z9NJ3theTFQab6fHHgYvEe0IMJBUhqrjxibM/WSBBC/qvecGXidLsaqcr2FuwAeXfDGngVWK1w2d6H5c4ln0+phCeNUaeTRVIsG1Mq82a6flN/+0j5dbf7F+uTxymYW+xyZq63P6DJjGYRbH2SwDjp+7k8sAzBfBbrf8kXtK8MTfJqBarCUpL4i4UGkFWMdAfXPMw+FmVneLmGLXHdbHMPGj4C4tHnwJmpNwW6InpfF9S0hZYx0WY9Vv2JCRxUl1uEddjHfrFGJruCQ2S1Us+DyqvWs7ZUvbP6cE9WydXxgUWPQR/iUmitSiyp5AXdMWW+hscvLGhOviQIcKg6rUW7k9kH4TJyMyHv4POWzj9xB5LgrRw6353+7Hy3I7KH1TLzzore17WBKtnBSMYMHCeFKx8sG9S8FYpK21+Adog1GZQJjHPCly4o4idUy6hY6OZPB1IQrcS7eXXbvDKC13xNw1IGNTXkZX4IIPk3M9f8YS1fs9/ha6fH+k1KcIgwEZkJ+XVcvxKfDEnSN6FWxqipPBdzyr5n7ETjfSO7FuxNXbhKIAu06UNtXx8vycqcs6c/YpAN0Jdi7in5mzjuiGZGbntk3v+c3ReqTq/m0dUF9TxhwK+44qCJxBky+v4uK8kj6pYvu64e7SIl3zuefVumaKn3J+B41XsJlzcEGn6IAngOUnNTFEDX6nVtg31WfsKkc4mjQ6q7xaRsceO9LfYOrJ39LYeYATrywOwDyfg4Y3+8Q+VKRsxrCy8X0Z25TJ0FgqkUDIjgDSZ8zeHEYFDHN/GEFzF9KtW1O+UXHFzNBoc3D24tZz0+/8GnfvjEP7EDJtqb5xyw7V6JcWbkFNvesHuKJQajgB6dfy9dIjyr1W0EAVHkV1fzg7VtMGXXsD+WXRZesY/O7j5te3WpvgUhnhcFrZIduj5wjQB6EU7wl4XO7Y86hL2cYfOkvDadkQgukEpjHz+hCEIOV0OJK12ChnMWCOOsEXFogfYT9NyO19Sy0WZ9CcWlk4iEmXp2uFEWZOesSpP54Rlp9CZztMrmrTo4Hj5vk5drteaecSrN/jG4IVJoj+oeuxtaRW+5FPZg2MSL8EP/5b6qJ4+pYYCll5eDW39Vt0aoPwBS5BVilSdVHJ2Rc2CAAoHol4UCDdcrxLRwYfx+LSrPyKN7wcdR5zHvypYgFvLmTxYizy82gFImY9HuITAZ8Sh6ZxT8YnH10ApOge8wtQeSJrknVLEjFAWF7iEEuX7eXmKNOr1FBgxNmnrw7OeYBTzrLNtGddPIsWeh7GbeowRpMmk6uyhwyqp5GButXEjwoqwjmJgDSjLWdz7c+U5nQu3uXxuMu4ZYTZ/bXDQo1NpOzQbPIXNv3c8MBzjQuPK0JGvK2hUUC0wvzZyW00v1WjdaOsv6w2H2XzMTWOBZJvSVIirBWSFVP5oxw25rAhtoAIJjfOAI5cxCBzlyYtGIZdhXbeL5upa9FngaIqKfKJhuPO75p5wXgdWmaLLeYKlJx+ID7O5YfhfO3D4Ug2jjxsN48hyp6nNrbGmWH8L3LbE5FkzB5KfKDDQHL5oACbbGY85hdOJdVnTkYepH0qzOVNWJdwJMwMmSv4EnXIyiI+TxHK/us3SitvjNJyZOxkZclnijhuW9DLophfbyFS2U/xvbaPnfmVhWzzZ77MCiJL5GRrjiZJygo73ImryQYkuozSGwAAAPUHgZmRFML+ZYlyvNzEKow44ACFLGWoifFGFG7ao6mJxP+gQRDfZzOmEir8cn+cNYkOJMWXvu/1H3Bj/bMtqtap8QIWxe5GlYd4u7zzqT6p2C3vw7nVuXXkY7Xu4MH7wCJPjjXFbPaQJjh2Kw8azWZwlFo/UOx96BJ1z4gUkqHLiLqYY/SsiigWcIbLxyyFX5ZStozvauflTNCWIzAJyoPdajRZ9ypBue74vNbWn7v2IXDUSv8PK4wXPDg1xWJjzR3EZA/S+3Rcxx74VPQFQE9mKLS5MPV3oZUeqZelksO8Tgy9w2nzJQcsBiD5IzlEILmNcAkG543X0yAMiFsJZoL5/I7BCDL/ej1irbVViNyBiN5e4OWi1FTzjH40Trj2AVNShL+W7eOznKGy0zoMuXY1Y2/mU4w1jzTOe0K3fmmE/eRE9/7eJRfW0/TUe0RTt4gx60cehfdOTpjMqXVdluVUoPMho8AKfkGyZbKK7hdFD1/R8rAkevLM3+HnrJozFIBC1yA8mG69yvMErH9fUQrR9ioR5UA/33t38EvJFLrwkccZIxlYvNHD/md/yOIUIhEHGwx06RO9yA7WWM1ipveta1y5j58+LCjGuAqh4hHbYjuoZSAAAAAAAAAAAA=" alt="NextWave Digital logo" width="64" height="64" style="display:block;border-radius:50%"></a>
+      <a href="#book" style="font-weight:700">Book now</a>
+    </nav>
+    <h1 id="top">Your business, online and ready.</h1>
+    <p class="lead">Websites, QR menus, ads and digital help for shops, cafes and local businesses. One freelancer, one clear price, work delivered on time.</p>
+    <div class="actions">
+      <a class="btn" href="#book">Book your requirement</a>
+      <a class="btn alt" href="#services">See services</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="services">
+  <div class="wrap">
+    <h2>What we do for you</h2>
+    <p class="note">Pick one or more. Not listed? Choose “Custom” in the form and tell us what you need.</p>
+    <div class="grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="quote">“A good website is a promise kept: it works, it is honest, and it arrives on the day we agreed.”<small>Our working rule</small></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap speech">
+    <h2>About us</h2>
+    <p>NEXTWAVEDIGITAL is run by <strong>Anmol Pandit</strong>, a freelancer who builds websites and digital work for local businesses. When you work with us, you talk directly to the person doing your project. No middlemen, no confusing jargon.</p>
+    <h3 style="margin-top:1.8rem">A promise before we begin</h3>
+    <p>Running a small business is hard work. You do not have time to chase developers who go silent or deliver late. So we make you three promises.</p>
+    <p><strong>First,</strong> you will always know the price and the deadline before we start. <strong>Second,</strong> you will see your work early and can ask for changes until you are happy. <strong>Third,</strong> if we cannot do something well, we will tell you honestly instead of pretending.</p>
+    <p>Your business is your life’s effort. We treat it that way.</p>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <h2>What clients say</h2>
+    <!-- SAMPLE TEXT: replace these 3 reviews with real client reviews before you share the site. -->
+    <div class="grid" id="revGrid"></div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <h2>Book your requirement</h2>
+    <p class="note">Fill this form and tap the button. WhatsApp will open with your details ready to send to us.</p>
+    <form id="f" novalidate>
+      <label class="l" for="name">Your name</label>
+      <input type="text" id="name" autocomplete="name" placeholder="Full name">
+
+      <label class="l" for="shop">Shop or business name</label>
+      <input type="text" id="shop" placeholder="Name of your shop">
+
+      <span class="l" style="display:block;font-weight:700;margin:1.1rem 0 .35rem">What do you need? (pick one or more)</span>
+      <div class="opts" id="opts"></div>
+
+      <label class="l" for="custom">Custom requirement (optional)</label>
+      <textarea id="custom" placeholder="Write what you need in your own words"></textarea>
+
+      <label class="l" for="phone">Your phone number</label>
+      <input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="e.g. 98XXXXXXXX">
+
+      <label class="l" for="email">Your email</label>
+      <input type="email" id="email" autocomplete="email" placeholder="you@example.com">
+
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" type="submit" style="width:100%;margin-top:.5rem">Send requirement on WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><strong id="logo2">Your Agency Name</strong><br>Founder: Anmol Pandit · Freelance web and digital services<br><span id="phoneShow"></span></div>
+</footer>
+
+<script type="application/json" id="cfg">{"agency": "NEXTWAVEDIGITAL", "wa": "919117018319", "email": "", "services": [{"t": "Website", "d": "Fast, mobile-friendly site with your menu or products, timings, map and a WhatsApp button."}, {"t": "QR menu", "d": "Customers scan a code on the table and see your menu on their phone. You can update prices anytime."}, {"t": "Ads for your shop", "d": "Posters and social media ads that bring people through the door."}, {"t": "Wedding card design", "d": "Elegant digital and print-ready invitation cards in your style."}, {"t": "Wedding video invite", "d": "A short animated video invitation, easy to share on WhatsApp."}, {"t": "Digital help", "d": "Google Maps listing, logo, profile setup and other online jobs, handled for you."}, {"t": "Media collaboration", "d": "Partner with us on social media promotions and creative campaigns."}], "reviews": [{"q": "Our menu is now on a QR code and customers love it. Delivered earlier than promised.", "w": "Client name, Cafe"}, {"q": "Clear price, no hidden charges, and every change I asked for was done quickly.", "w": "Client name, Restaurant"}, {"q": "Easy to talk to and the wedding card looked beautiful. Everyone asked who made it.", "w": "Client name, Family event"}]}</script>
+<script>
+var SRC="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+var CFG=JSON.parse(document.getElementById("cfg").textContent);
+var AGENCY=CFG.agency, WA_NUMBER=CFG.wa;
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+document.title=AGENCY+" | Websites, QR Menus & Digital Help";
+document.getElementById("logo2").textContent=AGENCY;
+document.getElementById("phoneShow").textContent="WhatsApp +"+WA_NUMBER+(CFG.email?" \u00b7 "+CFG.email:"");
+document.getElementById("svcGrid").innerHTML=CFG.services.map(function(v){return '<div class="card"><h3>'+esc(v.t)+'</h3><p>'+esc(v.d)+'</p></div>';}).join("");
+document.getElementById("revGrid").innerHTML=CFG.reviews.map(function(r){return '<div class="card"><div class="stars" aria-label="5 stars">\u2605\u2605\u2605\u2605\u2605</div><p>\u201c'+esc(r.q)+'\u201d</p><div class="who">'+esc(r.w)+'</div></div>';}).join("");
+var SERVICES=CFG.services.map(function(v){return "Need: "+v.t;}).concat(["Custom (written below)"]);
+var box=document.getElementById("opts");
+SERVICES.forEach(function(v){
+  var l=document.createElement("label");
+  l.className="opt";
+  l.innerHTML='<input type="checkbox" value="'+esc(v)+'"> <span>'+esc(v)+'</span>';
+  box.appendChild(l);
+});
+
+document.getElementById("f").addEventListener("submit", function(e){
+  e.preventDefault();
+  var g = function(id){ return document.getElementById(id).value.trim(); };
+  var name = g("name"), shop = g("shop"), custom = g("custom"), phone = g("phone"), email = g("email");
+  var picked = Array.prototype.map.call(box.querySelectorAll("input:checked"), function(c){ return c.value; });
+  var err = document.getElementById("err");
+  if (!name || !shop) { err.style.color = "#c0392b"; err.textContent = "Please enter your name and shop name."; return; }
+  if (!picked.length && !custom) { err.textContent = "Please pick a service or write your custom requirement."; return; }
+  if (phone.replace(/\D/g,"").length < 10) { err.textContent = "Please enter a valid 10-digit phone number."; return; }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.textContent = "Please enter a valid email address."; return; }
+  err.textContent = "";
+  var msg = "New requirement booked\n\nName: " + name + "\nShop: " + shop +
+    "\nNeeds: " + (picked.length ? picked.join(", ") : "-") +
+    (custom ? "\nCustom: " + custom : "") +
+    "\nPhone: " + phone + "\nEmail: " + email;
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+  err.style.color = "var(--brand)";
+  err.textContent = "WhatsApp has opened. Please tap Send there to book your requirement.";
+});
+
+// Animated gold wave background for the hero
+(function(){
+  var c=document.getElementById("bg"),x=c.getContext("2d"),W=0,H=0,t=0;
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var sq=[];for(var k=0;k<16;k++)sq.push({x:Math.random(),y:Math.random(),s:3+Math.random()*5,v:.0006+Math.random()*.0012});
+  function size(){var r=c.parentNode.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);}
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<7;i++){
+      x.beginPath();
+      for(var px=0;px<=W;px+=6){
+        var y=H*.8+Math.sin(px/150+t+i*.55)*30+Math.sin(px/75-t*1.4+i)*12+i*11;
+        if(px)x.lineTo(px,y);else x.moveTo(px,y);
+      }
+      x.strokeStyle="rgba(233,185,73,"+(.55-i*.07)+")";x.lineWidth=1.5;x.stroke();
+    }
+    for(var j=0;j<sq.length;j++){
+      var q=sq[j];q.y-=q.v;if(q.y<0){q.y=1;q.x=Math.random();}
+      x.fillStyle="rgba(233,185,73,"+(.12+.3*Math.abs(Math.sin(t*2+j)))+")";
+      x.fillRect(q.x*W,q.y*H,q.s,q.s);
+    }
+    t+=.012;
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  size();draw();
+  window.addEventListener("resize",function(){size();if(reduce)draw();});
+})();
+// Owner panel: shown only when the viewer is signed in as the owner of this page
+(async function(){
+  try{
+    if(typeof claude==="undefined")return;
+    var u=await claude.use("user"), art=await claude.use("artifact");
+    if(!u||!art||!u.isOwner())return;
+    var btn=document.createElement("button");btn.id="ownBtn";btn.className="btn";btn.textContent="Owner panel";
+    var ov=document.createElement("div");ov.id="ownBox";
+    ov.innerHTML='<div class="panel" role="dialog" aria-label="Owner panel"><h2 style="font-size:1.5rem">Owner panel</h2><p class="note">Only you can see this. Changes go live for all visitors when you save.</p>'+
+    '<label class="l" for="oA">Agency name</label><input type="text" id="oA">'+
+    '<label class="l" for="oW">Your WhatsApp number (with 91, no + or spaces)</label><input type="tel" id="oW" inputmode="tel">'+
+    '<label class="l" for="oE">Your contact email (shown in footer, optional)</label><input type="email" id="oE">'+
+    '<label class="l" for="oS">Services (one per line: Title | Short description)</label><textarea id="oS"></textarea>'+
+    '<label class="l" for="oR">Reviews (one per line: Review text | Client name, business)</label><textarea id="oR"></textarea>'+
+    '<p class="err" id="oM" role="alert"></p>'+
+    '<div style="display:flex;gap:.7rem;flex-wrap:wrap"><button class="btn" id="oSave" type="button">Save and publish</button><button class="btn alt" id="oClose" type="button">Close</button></div></div>';
+    document.body.appendChild(btn);document.body.appendChild(ov);
+    var $=function(i){return document.getElementById(i);};
+    btn.onclick=function(){
+      $("oA").value=CFG.agency;$("oW").value=CFG.wa;$("oE").value=CFG.email||"";
+      $("oS").value=CFG.services.map(function(v){return v.t+" | "+v.d;}).join("\n");
+      $("oR").value=CFG.reviews.map(function(r){return r.q+" | "+r.w;}).join("\n");
+      $("oM").textContent="";ov.style.display="block";
+    };
+    $("oClose").onclick=function(){ov.style.display="none";};
+    $("oSave").onclick=async function(){
+      var m=$("oM");m.style.color="#c0392b";
+      var wa=$("oW").value.replace(/\D/g,"");if(wa.length===10)wa="91"+wa;
+      if(wa.length<11){m.textContent="Enter a valid WhatsApp number, for example 919876543210.";return;}
+      var parse=function(t,a,b){return t.split("\n").map(function(l){var i=l.indexOf("|"),o={};o[a]=(i<0?l:l.slice(0,i)).trim();o[b]=(i<0?"":l.slice(i+1)).trim();return o;}).filter(function(o){return o[a];});};
+      var cfg={agency:$("oA").value.trim()||CFG.agency,wa:wa,email:$("oE").value.trim(),services:parse($("oS").value,"t","d"),reviews:parse($("oR").value,"q","w")};
+      if(!cfg.services.length){m.textContent="Add at least one service.";return;}
+      var html=SRC.replace(/(<script type="application\/json" id="cfg">)[\s\S]*?(<\/script>)/,function(x,a,b){return a+JSON.stringify(cfg).replace(/</g,"\\u003c")+b;});
+      m.style.color="var(--brand)";m.textContent="Saving\u2026";
+      try{await art.publish(html);}catch(e){m.style.color="#c0392b";m.textContent="Couldn\u2019t save: "+((e&&(e.code||e.message))||e);}
+    };
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
